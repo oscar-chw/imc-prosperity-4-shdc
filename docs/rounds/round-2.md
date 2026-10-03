@@ -2,7 +2,7 @@
 
 Sources: audit of the team's code (Codex, 2026), relayed; original files not published. Product facts are as other teams' write-ups state them; see [credits](../credits.md). The manual challenge is in [manual-rounds.md](../manual-rounds.md#round-2-invest-and-expand).
 
-**Who:** teammates (anonymous) coded this round; Oscar, by his account, verified the team's results.
+**Who:** teammates (anonymous) coded this round ([who did what](../../README.md#who-did-what)).
 
 ## Products
 

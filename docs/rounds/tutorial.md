@@ -2,7 +2,7 @@
 
 Sources: audit of the team's code (Codex, 2026), relayed; original files not published. Other teams' work is linked where it is used; full list in [credits](../credits.md).
 
-**Who:** teammates (anonymous) coded this round; Oscar, by his account, verified the team's results.
+**Who:** teammates (anonymous) coded this round ([who did what](../../README.md#who-did-what)).
 
 ## Products
 

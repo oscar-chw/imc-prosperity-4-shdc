@@ -1,4 +1,4 @@
-# How I investigated my mistakes afterwards
+# Post-competition analysis tools
 
 After the competition, Oscar directed a small offline lab to study two mechanisms that sit under every market-making strategy the team ran: **inventory-aware quoting** and **cancellation delay**. The lab was built later, with AI help, on **SYNTHETIC** data.
 

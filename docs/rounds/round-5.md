@@ -2,7 +2,7 @@
 
 Sources: audit of the team's code (Codex, 2026), relayed; original files not published. Product facts are as other teams' write-ups state them; see [credits](../credits.md). The manual challenge is in [manual-rounds.md](../manual-rounds.md#round-5-news-portfolio).
 
-**Who:** Oscar coded this round (his account).
+**Who:** Oscar coded this round ([who did what](../../README.md#who-did-what)).
 
 ## Products
 
@@ -18,12 +18,12 @@ From the audit:
 
 - **Nine primary products** (five SLEEP_POD, two OXYGEN_SHAKE, two GALAXY_SOUNDS): per-product market making with a fair value from a Kalman filter or an Ornstein–Uhlenbeck (mean-reverting) model, and quotes adjusted for inventory.
 - **A cross-family gate across all 50 products.** For each family, an online estimate of each product's residual against its family. A trade fires only when it passes every gate: a warm-up period, a score threshold, a minimum gap in z-score, and a spread check. Size is one lot.
-- **Two execution variants** were backtested for the gate: passive (quote and wait) and take-only (cross the spread).
+- **Two execution variants** were backtested for the cross-gate portfolio: passive (quote and wait) and take-only (cross the spread).
 
 ## Result
 
 - Official: per-round scores were not recorded; only the final result is.
-- **LOCAL BACKTEST, NOT OFFICIAL**, cross-family gate on the visible days 2–4: 127,494 passive and 165,281 take-only. The audit does not say whether these are totals or per-day values.
+- **LOCAL BACKTEST, NOT OFFICIAL**, the round-5 cross-gate portfolio replay (local) on the visible days 2–4: 127,494 passive and 165,281 take-only. The audit does not say whether these are totals or per-day values.
 
 ## Mistakes
 

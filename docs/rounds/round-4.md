@@ -2,7 +2,7 @@
 
 Sources: audit of the team's code (Codex, 2026), relayed; original files not published. Product facts are as other teams' write-ups state them; see [credits](../credits.md). The manual challenge is in [manual-rounds.md](../manual-rounds.md#round-4-exotic-options).
 
-**Who:** Oscar coded this round (his account).
+**Who:** Oscar coded this round ([who did what](../../README.md#who-did-what)).
 
 ## Products
 
