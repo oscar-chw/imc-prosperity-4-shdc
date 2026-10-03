@@ -114,7 +114,7 @@ Detail in [design-decisions.md](docs/design-decisions.md):
 
 Non-blocking:
 
-- Code: TODO-OSCAR: optional: excerpts of the team's trader files once they are recovered from the team PC.
+- Code: the team's trader files are not published; excerpts may be added later if they are recovered from the team PC.
 - Screenshots: published with the team name visible, cropped to the leaderboard panel, metadata stripped ([assets/README.md](assets/README.md)).
 
 ## What I learned
