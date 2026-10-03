@@ -32,7 +32,7 @@ TODO-OSCAR: Q4 — did anything in the tutorial go wrong or carry a wrong belief
 
 ## What top teams did
 
-- [Dark Forest Hunter](https://github.com/Leo-Hawking/IMC-Prosperity-4-Review) (93rd, as stated) used the tutorial to pin down the matching rules: no queue for resting orders, and the best price fills first. That is the kind of fact that decides whether passive quotes ever fill, and it is cheap to test before the scored rounds.
+- [Dark Forest Hunter](https://github.com/Leo-Hawking/IMC-Prosperity-4-Review) (93rd, as stated) used the tutorial to pin down the matching rules: orders at the best price get no queue priority, and the bots only hit the best price. That is the kind of fact that decides whether passive quotes ever fill, and it is cheap to test before the scored rounds.
 - [chrispyroberts](https://github.com/chrispyroberts/imc-prosperity-4) built a Monte Carlo backtester for the tutorial products with a dashboard, so strategies could be scored on many simulated days rather than the few days of sample data.
 
 The comparison: our tutorial strategy matches the standard answer for a fixed-value product. Nothing recorded shows that the team measured the matching rules or simulated beyond the sample days.

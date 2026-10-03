@@ -11,7 +11,7 @@ The biggest lesson, in Oscar's words, belongs in the README's [What I learned](.
 
 ### Process
 
-**A local replay is a filter, not a forecast.** The team's own FINDINGS.md warns that the round-1 replay over 10k ticks may overstate its ≈63,464 three-day mean. In round 5 the backtest PnL decayed across visible days 2–4, and the decision document wrote down the hidden-test risk ([round 5](rounds/round-5.md)). Both warnings were recorded; what is not recorded is a rule that turned them into a go or no-go.
+**A local replay is a filter, not a forecast.** The team's own notes warn that the round-1 replay over 10k ticks may overstate its ≈63,464 three-day mean. In round 5 the backtest PnL decayed across visible days 2–4, and the decision document wrote down the hidden-test risk ([round 5](rounds/round-5.md)). The plainest sign is a level: the round-5 cross-family gate alone replayed at 127,494 (passive) to 165,281 (take-only) on three visible days, more than the team's official algorithmic score for the whole competition, 86,750. That is not a measured overstatement: whether the local figures are totals or per-day values is not recorded, the official total's round coverage is open, and the replay saw visible days only. Both warnings were recorded; what is not recorded is a rule that turned them into a go or no-go.
 
 DRAFT — Oscar to confirm
 
@@ -25,11 +25,11 @@ DRAFT — Oscar to confirm
 
 ### Modelling
 
-**Make the per-tick update constant-time, and gate on uncertainty.** In round 4 a drift gate that looked back over 5,000 ticks (O(5k) work per tick) became a local-linear-trend Kalman filter (O(1) per tick) plus a t-statistic gate, so the drift sign is used only when the estimate is clearly away from zero ([round 4](rounds/round-4.md)).
+**Gate a signal on its uncertainty, not only its sign.** In round 4 a drift gate over a 5,000-tick window became a local-linear-trend Kalman filter, whose slope estimate comes with a variance, plus a t-statistic gate, so the drift sign is used only when the estimate is clearly away from zero ([round 4](rounds/round-4.md)). The filter also updates in constant time per tick, but that is secondary: a rolling-window slope can too, with running sums.
 
 DRAFT — Oscar to confirm
 
-**Cost a hedge before adding it.** In round 3 the team modelled the cost of delta-hedging the vouchers against the gamma-scalp value it would earn, found the cost higher, and left the book unhedged ([round 3](rounds/round-3.md)). Top teams split on the same question.
+**Cost a hedge before adding it, and keep the inputs.** In round 3 the team modelled the cost of delta-hedging the vouchers against the gamma-scalp value it would earn, found the cost higher, and left the book unhedged ([round 3](rounds/round-3.md#the-delta-hedging-decision)). That comparison holds for a long-gamma book; the book's direction, like the cost inputs, is not recorded. The two top-team write-ups that discuss a voucher hedge both favour it.
 
 DRAFT — Oscar to confirm
 
@@ -44,10 +44,10 @@ DRAFT — Oscar to confirm
 | The backtester is a filter, not ground truth; fit on two days and test on the third | [Une Baguette Fromage](https://github.com/Durpie-Git/imc-prosperity-4) | Partly: our round-1 and round-5 warnings agree with it |
 | Ship only if the worst single backtest day is positive | [DTU Quant Lab](https://github.com/DataAthleteChamp/dtu-quant-lab-imc-prosperity-4) | No per-day figures recorded |
 | A threshold should sit in a stable region, not on a spike; random series give many chance "cointegrated" pairs | [rat_hunters](https://github.com/rmtf1111/imc-prosperity-4) | Our cross-family gate is the kind of idea it warns about |
-| Statistical significance at p < 0.05 is not enough when testing many ideas; edge must survive costs | [Alpha Search](https://github.com/fabianbaiertum/IMC-Prosperity-4) | Our round-2 research list (seven methods) is the setting it describes |
+| Statistical significance at p < 0.05 is not enough when testing many ideas; edge must survive costs | [Alpha Search](https://github.com/fabianbaiertum/IMC-Prosperity-4) | Our round-2 research, several methods with none known to have shipped, is the setting it describes |
 | Simple broad market making beat elaborate relative value | [Une Baguette Fromage](https://github.com/Durpie-Git/imc-prosperity-4) | We market-made 9 of 50 round-5 products |
 | Add per-product PnL attribution early | [DTU Quant Lab](https://github.com/DataAthleteChamp/dtu-quant-lab-imc-prosperity-4) | Not recorded |
 | Write the change list down before opening a new day of data; re-run sweeps after every baseline change | [Team Ryan Challman](https://github.com/nathanw3456/Prosperity_4_Writeup) | Our `results/*.md` decision documents are related; whether change lists came first is not recorded |
-| Re-check the environment every round instead of carrying beliefs across rounds; two people agreeing can lock in a wrong belief | [Dark Forest Hunter](https://github.com/Leo-Hawking/IMC-Prosperity-4-Review) | Not recorded |
+| Re-check the environment every round instead of carrying beliefs across rounds; a human and an AI converging on a wrong belief entrench it | [Dark Forest Hunter](https://github.com/Leo-Hawking/IMC-Prosperity-4-Review) | Not recorded |
 | Solve for the crowd first in manual rounds | [JaneRT](https://github.com/heyman7913/imc-prosperity-4) | No manual records |
-| Seed online estimators before the live run starts | [Team Infinite 88](https://github.com/Chamoy-code/imc-prosperity-4-challenge) | Our round-5 gate has a warm-up period; its length is not recorded |
+| Do not hard-code estimator seeds calibrated on sample data; let them warm up on live data | [Team Infinite 88](https://github.com/Chamoy-code/imc-prosperity-4-challenge) | Our round-5 gate has a warm-up period; its length is not recorded |

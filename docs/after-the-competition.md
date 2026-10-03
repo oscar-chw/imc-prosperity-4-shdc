@@ -6,7 +6,7 @@ Read this page with three facts in mind:
 
 - **Every number here is SYNTHETIC.** The price paths are hand-made rising and falling sequences, not Prosperity data.
 - **None of the team's code, fills or logs went through the lab.** The team's code is not recovered on the machine where the lab was built. The lab says nothing about how our rounds actually went.
-- **The lab's code:** [asof-research/packages/imc-sim](https://github.com/hihihhi/asof-research/tree/main/packages/imc-sim), unpublished until review.
+- **The lab's code:** asof-research/packages/imc-sim (to be published; the link is added at publish time).
 
 Source for every number below: that package's `docs/QUOTE_STUDY_RESULTS.md` and `docs/QUOTE_POLICY.md`, and its README for the import example.
 
