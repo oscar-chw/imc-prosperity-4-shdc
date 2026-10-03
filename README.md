@@ -22,7 +22,7 @@ git clone <this repo> && cd imc-prosperity-4-shdc
 bash scripts/demo.sh
 ```
 
-Scores come from leaderboard screenshots (to be added) and strategies from a relayed AI audit of the team's unpublished code ([Limits](#limits)); the write-up was drafted with AI coding agents under Oscar's design and review.
+Scores come from leaderboard screenshots ([assets/leaderboard/](assets/leaderboard/)) and strategies from a relayed AI audit of the team's unpublished code ([Limits](#limits)); the write-up was drafted with AI coding agents under Oscar's design and review.
 
 ## The problem
 
@@ -47,7 +47,10 @@ By Oscar's account (the team folder has no git history): three members. The two 
 
 ## Results
 
-**Official (final leaderboard).** Source: leaderboard screenshots, read 2026-06-01; images to be added.
+**Official (final leaderboard).** Source: leaderboard screenshots taken 2026-06-01 (the public leaderboard has since been taken down), in [assets/leaderboard/](assets/leaderboard/).
+
+![Final overall leaderboard: SHDC 904th, 233,959](assets/leaderboard/overall-global-904.jpg)
+![Hong Kong overall: SHDC 18th](assets/leaderboard/overall-hk-18.jpg)
 
 <!-- results:start -->
 | Track | Score | Global rank | Top % of 18,803 | Hong Kong rank |
@@ -112,7 +115,7 @@ Detail in [design-decisions.md](docs/design-decisions.md):
 Non-blocking:
 
 - Code: TODO-OSCAR: optional: excerpts of the team's trader files once they are recovered from the team PC.
-- Screenshots: permitted with the team name visible; pending transfer ([assets/README.md](assets/README.md)).
+- Screenshots: published with the team name visible, cropped to the leaderboard panel, metadata stripped ([assets/README.md](assets/README.md)).
 
 ## What I learned
 
