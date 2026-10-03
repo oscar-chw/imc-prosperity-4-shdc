@@ -41,7 +41,7 @@ ROWS = [
      "Hedged (19th); 583rd regret not\nswitching their hedge on", "Different", "rounds/round-3.md"),
     ("R3", "Deep strikes (VEV_6000/6500)", "Buy at zero, hold to\nend of day",
      "Bid 0 or 1", "Same idea", "rounds/round-3.md"),
-    ("R3-R4", "Trend vs. regime", "Kalman drift sign with a\nt-statistic gate (VFE only)",
+    ("R4", "Trend vs. regime", "Kalman drift sign with a\nt-statistic gate (VFE only)",
      "Three-state regime detector;\nopening-price regimes", "Partly or late", "top-teams-comparison.md"),
     ("R4", "Named counterparties", "Traded signals from\nMarks 14, 38, 01 and 55",
      "Mostly not traded; copying Marks\n14 and 38 did not generalise", "Different", "rounds/round-4.md"),

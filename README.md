@@ -15,7 +15,7 @@ The field's best ideas set against ours, round by round. A team of three: teamma
 
 ![Our approach against the top teams', by product type: same idea, partly or late, different, or not in our records](assets/strategy-map.png)
 
-The per-round version of this comparison, with the lesson for each round, is the table under [Approach](#approach). This repository is documentation; its demo verifies the write-up's links and structure and prints the summary (Python 3, no installs):
+Per-round table with lessons: [Approach](#approach). The demo verifies the write-up's links and structure and prints the summary (Python 3, no installs):
 
 ```bash
 git clone <this repo> && cd imc-prosperity-4-shdc
@@ -30,7 +30,7 @@ IMC Prosperity 4 is a team trading competition run by IMC Trading, with [18,803 
 
 ## Approach
 
-One trader per round, as listed above; each [round document](docs/rounds/round-1.md) follows one template (products, our hypothesis, strategy, result, mistakes, what top teams did). The lesson column is derived from the records, not Oscar's words; his are under [What I learned](#what-i-learned). Theme-by-theme detail: [top-teams-comparison.md](docs/top-teams-comparison.md); manual rounds: [manual-rounds.md](docs/manual-rounds.md).
+Each [round document](docs/rounds/round-1.md) follows one template. The lesson column is derived from the records, not Oscar's words (his are under [What I learned](#what-i-learned)). Detail: [top-teams-comparison.md](docs/top-teams-comparison.md), [manual-rounds.md](docs/manual-rounds.md).
 
 | Round | Products | Where top teams differed | Mistake or lesson (derived) |
 |---|---|---|---|
@@ -63,7 +63,7 @@ By Oscar's account (the team folder has no git history): three members. The two 
 
 **LOCAL BACKTEST, NOT OFFICIAL** (audit of the team's code, relayed): the round-1 trader replayed at ≈63,464 (3-day mean), with the team's note that the replay may overstate; the round-5 cross-gate portfolio replay (local) gave 127,494 with passive and 165,281 with take-only execution on visible days 2–4, with PnL decaying across the days and the hidden-test risk written down.
 
-**Replay against result.** That one-round local replay exceeds the team's official algorithmic score for the scored rounds, 86,750. They are not directly comparable: the audit does not say whether the local figures are totals or per-day values, the replay uses a local matching model on visible days, and the official score covers hidden days. It is not a measured overstatement, but it is the plainest sign in the records that a replay's level is a filter, not a forecast.
+**Replay against result.** That one-round local replay exceeds the official algorithmic 86,750 for the scored rounds. They are not directly comparable (units unrecorded; local matching on visible days against official hidden days), so this is not a measured overstatement, only the plainest sign that a replay's level is a filter, not a forecast.
 
 ## How to run
 
@@ -72,7 +72,7 @@ bash scripts/demo.sh     # link and round-template checks, then the result table
 bash scripts/check.sh    # unit tests of the checker, then the demo (what CI runs)
 ```
 
-Both need only Python 3 and finish in seconds. `python scripts/make_figure.py` redraws the figure (needs matplotlib). Five-minute path: [Results](#results), [top-teams-comparison.md](docs/top-teams-comparison.md), [round 5](docs/rounds/round-5.md), [lessons.md](docs/lessons.md).
+Python 3 only, seconds each; `python scripts/make_figure.py` redraws the figure (needs matplotlib).
 
 ## Architecture
 
@@ -106,7 +106,6 @@ Detail in [design-decisions.md](docs/design-decisions.md):
 - **No per-round scores**, and the round-5 submitted file is not identified (the decision document and the root trader differ).
 - **Local backtests are not official** and, by the team's own notes, may overstate.
 - **Top-team figures** were re-checked against each write-up's README on 2026-10-03 through a fetch tool that quotes the page; figures it could not find were removed. The Prosperity 3 notes in [imc3-reference.md](docs/imc3-reference.md) were not re-checked.
-- **SYNTHETIC only:** the post-competition tools in [after-the-competition.md](docs/after-the-competition.md).
 
 ### Pending Oscar's input
 
