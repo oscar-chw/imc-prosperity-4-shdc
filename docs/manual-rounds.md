@@ -1,0 +1,49 @@
+# Manual rounds
+
+Our manual total is 147,209, 1,132nd of 18,803 (top 6.02%). Source: leaderboard screenshots, read 2026-06-01; images withheld pending permission.
+
+That is more points than our algorithmic total (86,750) but a worse rank (algorithmic was 917th). Points are only comparable within a track, so the manual result is the weaker of the two against the field.
+
+**What the records hold about our manual submissions: nothing.** The audit covers trader code only, and no record holds our answers, our reasoning or a per-round manual score. Each section below therefore describes the problem and what top teams did, with one placeholder for our part.
+
+Problem descriptions are as top-team write-ups state them; see [credits](credits.md).
+
+## Round 1: auction
+
+Two goods, DRYLAND_FLAX (bought back at 30) and EMBER_MUSHROOM (bought back at 20, with a fee of 0.10), sold in a call auction: one clearing price, orders filled by price then time. The submission is a price and quantity for each.
+
+What top teams did: [Une Baguette Fromage](https://github.com/Durpie-Git/imc-prosperity-4) (1st on this manual round, as stated) wrote an exact simulator of the auction and brute-forced every price and quantity, for 87,995. The observation several write-ups share: sit one unit below the point where the clearing price jumps.
+
+TODO-OSCAR: Q4 — what did the team submit for the round-1 auction, and what did it score?
+
+## Round 2: invest and expand
+
+A budget of 50,000 split across three pillars: Research (logarithmic return), Scale (linear return) and Speed (a multiplier that depends on your rank against other teams). The Speed pillar makes it a game against the crowd, not a single-player optimisation.
+
+What top teams did: [Une Baguette Fromage](https://github.com/Durpie-Git/imc-prosperity-4) and [JaneRT](https://github.com/heyman7913/imc-prosperity-4) both reached about 15/43/42 after modelling what the crowd would choose; Une Baguette Fromage sampled a language model many times to stand in for the crowd. Results reported: 217,869 (Une Baguette Fromage). [Team Infinite 88](https://github.com/Chamoy-code/imc-prosperity-4-challenge) put nothing on Speed and scored 24,233, which they list as a mistake.
+
+TODO-OSCAR: Q4 — what allocation did the team submit, and did it model the crowd?
+
+## Round 3: two-bid game
+
+Submit two bids for goods whose reserve prices are uniform from 670 to 920 in steps of 5, resold at 920. The second bid is penalised (cubically) if it is below the average second bid of the field, so it again depends on the crowd.
+
+What top teams did: the Nash solution is near 751/836. Teams then shifted the second bid up as insurance against a high field: [Alpha Search](https://github.com/fabianbaiertum/IMC-Prosperity-4) chose 751/841 at a stated cost of 0.14% of expected value; [Team Ryan Challman](https://github.com/nathanw3456/Prosperity_4_Writeup) ran nine crowd scenarios and chose 766/861. The field's average turned out to be 859, and results clustered from about 74.7k to 80.9k.
+
+TODO-OSCAR: Q4 — what were the team's two bids, and how was the second chosen?
+
+## Round 4: exotic options
+
+A portfolio of options on AETHER_CRYSTAL (spot 50, very high volatility): vanillas at two expiries, a chooser, a binary put and a knock-out put. Scored on 100 simulated price paths, so luck mattered a lot.
+
+What top teams did: [Une Baguette Fromage](https://github.com/Durpie-Git/imc-prosperity-4) traded expected value against tail risk (CVaR), hedged heavily and realised 36,929, which they call over-hedging. [rat_hunters](https://github.com/rmtf1111/imc-prosperity-4) used a mean–variance portfolio for +65,024. [JaneRT](https://github.com/heyman7913/imc-prosperity-4) priced the knock-out with a discrete barrier rather than a continuous one. [Team Infinite 88](https://github.com/Chamoy-code/imc-prosperity-4-challenge) scored +2,826.
+
+TODO-OSCAR: Q4 — what portfolio did the team submit, and how was risk treated?
+
+## Round 5: news portfolio
+
+A budget of 1,000,000 to spread, long or short, over nine goods, guided by headlines shown as an image, with a fee that grows with the square of position size.
+
+What top teams did: the consensus calls were short Lava Cake (strongest), long Thermalite Core, long Sulfur Reactor and short Pyroflex Cells. Because the fee is quadratic, the optimal size is well below "all in": [Alpha Search](https://github.com/fabianbaiertum/IMC-Prosperity-4) derive a position of about half the expected move. Teams used 65% to 78% of the budget, and most reported results fell between about 98k and 104k ([rat_hunters](https://github.com/rmtf1111/imc-prosperity-4) +104,014; [Team Ryan Challman](https://github.com/nathanw3456/Prosperity_4_Writeup) +98,201). Oversized positions lost to fees.
+
+TODO-OSCAR: Q4 — which positions did the team take, and which calls were right?

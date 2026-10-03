@@ -1,0 +1,53 @@
+# Lessons
+
+Two kinds of lesson, kept apart:
+
+1. **Candidates from our own records.** Drawn only from the audit of the team's code (Codex, 2026), relayed, original files not published, and from the final scores. None is Oscar's wording yet; each waits for him to confirm, change or drop it.
+2. **Lessons other teams wrote down.** Theirs, summarised and credited. Our records can test some of them and not others.
+
+The biggest lesson, in Oscar's words, belongs in the README's [What I learned](../README.md#what-i-learned) section and is still open there.
+
+## Candidates from our records
+
+### Process
+
+**A local replay is a filter, not a forecast.** The team's own FINDINGS.md warns that the round-1 replay over 10k ticks may overstate its ≈63,464 three-day mean. In round 5 the backtest PnL decayed across visible days 2–4, and the decision document wrote down the hidden-test risk ([round 5](rounds/round-5.md)). Both warnings were recorded; what is not recorded is a rule that turned them into a go or no-go.
+
+DRAFT — Oscar to confirm
+
+**Record exactly which file was submitted.** The round-5 decision document names `submissions/r5_portfolio_cross_gate_v01.py`; the root `ROUND_5/trader.py` is a different file. With no git history, nobody can now say which one ran, so the round-5 result cannot be tied to its code.
+
+DRAFT — Oscar to confirm
+
+**Compare the two tracks by rank, not points.** Manual earned 147,209 points to algorithmic's 86,750, yet ranked 1,132nd against 917th. Reading the points alone gives the wrong answer about where the team stood against the field.
+
+DRAFT — Oscar to confirm
+
+### Modelling
+
+**Make the per-tick update constant-time, and gate on uncertainty.** In round 4 a drift gate that looked back over 5,000 ticks (O(5k) work per tick) became a local-linear-trend Kalman filter (O(1) per tick) plus a t-statistic gate, so the drift sign is used only when the estimate is clearly away from zero ([round 4](rounds/round-4.md)).
+
+DRAFT — Oscar to confirm
+
+**Cost a hedge before adding it.** In round 3 the team modelled the cost of delta-hedging the vouchers against the gamma-scalp value it would earn, found the cost higher, and left the book unhedged ([round 3](rounds/round-3.md)). Top teams split on the same question.
+
+DRAFT — Oscar to confirm
+
+**Use a Bayesian optimiser as a proposal tool when data is scarce.** In round 2, GP-UCB fitted to 3 backtest results proposed the next pair of `PASSIVE_CAP` and `CLEAR_OFFSET` to try, rather than claiming an optimum ([round 2](rounds/round-2.md)).
+
+DRAFT — Oscar to confirm
+
+## Lessons other teams wrote down
+
+| Lesson | Who stated it | Can our records test it? |
+|---|---|---|
+| The backtester is a filter, not ground truth; fit on two days and test on the third | [Une Baguette Fromage](https://github.com/Durpie-Git/imc-prosperity-4) | Partly: our round-1 and round-5 warnings agree with it |
+| Ship only if the worst single backtest day is positive | [DTU Quant Lab](https://github.com/DataAthleteChamp/dtu-quant-lab-imc-prosperity-4) | No per-day figures recorded |
+| A threshold should sit in a stable region, not on a spike; random series give many chance "cointegrated" pairs | [rat_hunters](https://github.com/rmtf1111/imc-prosperity-4) | Our cross-family gate is the kind of idea it warns about |
+| Statistical significance at p < 0.05 is not enough when testing many ideas; edge must survive costs | [Alpha Search](https://github.com/fabianbaiertum/IMC-Prosperity-4) | Our round-2 research list (seven methods) is the setting it describes |
+| Simple broad market making beat elaborate relative value | [Une Baguette Fromage](https://github.com/Durpie-Git/imc-prosperity-4) | We market-made 9 of 50 round-5 products |
+| Add per-product PnL attribution early | [DTU Quant Lab](https://github.com/DataAthleteChamp/dtu-quant-lab-imc-prosperity-4) | Not recorded |
+| Write the change list down before opening a new day of data; re-run sweeps after every baseline change | [Team Ryan Challman](https://github.com/nathanw3456/Prosperity_4_Writeup) | Our `results/*.md` decision documents are related; whether change lists came first is not recorded |
+| Re-check the environment every round instead of carrying beliefs across rounds; two people agreeing can lock in a wrong belief | [Dark Forest Hunter](https://github.com/Leo-Hawking/IMC-Prosperity-4-Review) | Not recorded |
+| Solve for the crowd first in manual rounds | [JaneRT](https://github.com/heyman7913/imc-prosperity-4) | No manual records |
+| Seed online estimators before the live run starts | [Team Infinite 88](https://github.com/Chamoy-code/imc-prosperity-4-challenge) | Our round-5 gate has a warm-up period; its length is not recorded |
