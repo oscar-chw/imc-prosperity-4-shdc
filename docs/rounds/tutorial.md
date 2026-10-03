@@ -2,6 +2,8 @@
 
 Sources: audit of the team's code (Codex, 2026), relayed; original files not published. Other teams' work is linked where it is used; full list in [credits](../credits.md).
 
+**Who:** teammates (anonymous) coded this round; Oscar, by his account, verified the team's results.
+
 ## Products
 
 Two practice products:
@@ -28,7 +30,7 @@ No tutorial score is recorded, and no local backtest figure either.
 
 The records show none for this round.
 
-TODO-OSCAR: Q4 — did anything in the tutorial go wrong or carry a wrong belief into round 1?
+No first-hand account of this round is recorded: teammates coded it, and Oscar's overall lesson is in the [README](../../README.md#what-i-learned).
 
 ## What top teams did
 

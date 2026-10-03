@@ -1,41 +1,28 @@
 # Lessons
 
-Two kinds of lesson, kept apart:
+Three kinds of lesson, kept apart:
 
-1. **Candidates from our own records.** Drawn only from the audit of the team's code (Codex, 2026), relayed, original files not published, and from the final scores. None is Oscar's wording yet; each waits for him to confirm, change or drop it.
-2. **Lessons other teams wrote down.** Theirs, summarised and credited. Our records can test some of them and not others.
+1. **Oscar's own lesson**, in his words, is in the README's [What I learned](../README.md#what-i-learned) section.
+2. **Derived from the records.** Drawn by this write-up (AI-assisted) only from the audit of the team's code (Codex, 2026), relayed, and from the final scores. They are not Oscar's words, and each cites its evidence.
+3. **Lessons other teams wrote down.** Theirs, summarised and credited. Our records can test some of them and not others.
 
-The biggest lesson, in Oscar's words, belongs in the README's [What I learned](../README.md#what-i-learned) section and is still open there.
-
-## Candidates from our records
+## Derived from the records
 
 ### Process
 
 **A local replay is a filter, not a forecast.** The team's own notes warn that the round-1 replay over 10k ticks may overstate its ≈63,464 three-day mean. In round 5 the backtest PnL decayed across visible days 2–4, and the decision document wrote down the hidden-test risk ([round 5](rounds/round-5.md)). The plainest sign is a level: the round-5 cross-family gate alone replayed at 127,494 (passive) to 165,281 (take-only) on three visible days, more than the team's official algorithmic score for the whole competition, 86,750. That is not a measured overstatement: whether the local figures are totals or per-day values is not recorded, the official total's round coverage is open, and the replay saw visible days only. Both warnings were recorded; what is not recorded is a rule that turned them into a go or no-go.
 
-DRAFT — Oscar to confirm
-
 **Record exactly which file was submitted.** The round-5 decision document names `submissions/r5_portfolio_cross_gate_v01.py`; the root `ROUND_5/trader.py` is a different file. With no git history, nobody can now say which one ran, so the round-5 result cannot be tied to its code.
 
-DRAFT — Oscar to confirm
-
 **Compare the two tracks by rank, not points.** Manual earned 147,209 points to algorithmic's 86,750, yet ranked 1,132nd against 917th. Reading the points alone gives the wrong answer about where the team stood against the field.
-
-DRAFT — Oscar to confirm
 
 ### Modelling
 
 **Gate a signal on its uncertainty, not only its sign.** In round 4 a drift gate over a 5,000-tick window became a local-linear-trend Kalman filter, whose slope estimate comes with a variance, plus a t-statistic gate, so the drift sign is used only when the estimate is clearly away from zero ([round 4](rounds/round-4.md)). The filter also updates in constant time per tick, but that is secondary: a rolling-window slope can too, with running sums.
 
-DRAFT — Oscar to confirm
-
 **Cost a hedge before adding it, and keep the inputs.** In round 3 the team modelled the cost of delta-hedging the vouchers against the gamma-scalp value it would earn, found the cost higher, and left the book unhedged ([round 3](rounds/round-3.md#the-delta-hedging-decision)). That comparison holds for a long-gamma book; the book's direction, like the cost inputs, is not recorded. The two top-team write-ups that discuss a voucher hedge both favour it.
 
-DRAFT — Oscar to confirm
-
 **Use a Bayesian optimiser as a proposal tool when data is scarce.** In round 2, GP-UCB fitted to 3 backtest results proposed the next pair of `PASSIVE_CAP` and `CLEAR_OFFSET` to try, rather than claiming an optimum ([round 2](rounds/round-2.md)).
-
-DRAFT — Oscar to confirm
 
 ## Lessons other teams wrote down
 

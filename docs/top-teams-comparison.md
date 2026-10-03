@@ -22,7 +22,7 @@ Each row: one idea from a public write-up, summarised in our own words and linke
 ## How the rounds were scored
 
 - **Two phases (from the write-ups, not confirmed by our records).** Rounds 1 and 2 form "phase 1" and rounds 3 to 5 "phase 2". Several write-ups report phase-2 totals separately, which suggests a leaderboard reset between them ([rat_hunters](https://github.com/rmtf1111/imc-prosperity-4), [Team Infinite 88](https://github.com/Chamoy-code/imc-prosperity-4-challenge)).
-- **Two tracks (confirmed by our records).** Algorithmic and manual have separate leaderboards, and the overall score is their sum: our 86,750 + 147,209 = 233,959, with a separate rank on each (leaderboard screenshots, read 2026-06-01; images withheld pending permission).
+- **Two tracks (confirmed by our records).** Algorithmic and manual have separate leaderboards, and the overall score is their sum: our 86,750 + 147,209 = 233,959, with a separate rank on each (leaderboard screenshots, read 2026-06-01; images to be added).
 - **Visible days and hidden days.** Teams develop on visible sample days; the scored run uses days they have not seen. Our round-5 decision document names this as hidden-test risk (audit), and [Team Infinite 88](https://github.com/Chamoy-code/imc-prosperity-4-challenge)'s backtest-versus-live gap shows how large it can be.
 
-Whether our 233,959 covers both phases is an open question in the [README](../README.md#results).
+Our 233,959 is the final result; per-round and per-phase scores were not recorded ([README](../README.md#results)).

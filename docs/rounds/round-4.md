@@ -2,6 +2,8 @@
 
 Sources: audit of the team's code (Codex, 2026), relayed; original files not published. Product facts are as other teams' write-ups state them; see [credits](../credits.md). The manual challenge is in [manual-rounds.md](../manual-rounds.md#round-4-exotic-options).
 
+**Who:** Oscar coded this round (his account).
+
 ## Products
 
 The round-3 products (HYDROGEL_PACK, VELVETFRUIT_EXTRACT and the ten vouchers), plus one new kind of data: the trade tape now names the counterparty on each trade ("Mark 01", "Mark 14" and so on). One write-up ([Team Ryan Challman](https://github.com/nathanw3456/Prosperity_4_Writeup)) reports a strong down-drift of about 65 ticks on the third sample day.
@@ -28,16 +30,14 @@ The filter also updates in constant time per tick. That is a secondary gain: as 
 
 ## Result
 
-- Official: no per-round score is recorded.
-
-  TODO-OSCAR: Q1 — round-4 algorithmic score and rank, if the Prosperity portal still shows them.
+- Official: per-round scores were not recorded; only the final result is.
 - No local backtest figure is recorded for this round.
 
 ## Mistakes
 
 The records show none for this round. Another team (Team Ryan Challman) found that copying Mark 14 and Mark 38 did not generalise to a held-out day (below); our HYDROGEL logic used both. Whether that cost us anything is not recorded.
 
-TODO-OSCAR: Q4 — what went wrong in round 4, and did the counterparty signals earn or lose?
+Oscar's own account of this round is not recorded beyond his overall lesson in the [README](../../README.md#what-i-learned).
 
 ## What top teams did
 

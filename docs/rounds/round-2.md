@@ -2,6 +2,8 @@
 
 Sources: audit of the team's code (Codex, 2026), relayed; original files not published. Product facts are as other teams' write-ups state them; see [credits](../credits.md). The manual challenge is in [manual-rounds.md](../manual-rounds.md#round-2-invest-and-expand).
 
+**Who:** teammates (anonymous) coded this round; Oscar, by his account, verified the team's results.
+
 ## Products
 
 The same two products as round 1, ASH_COATED_OSMIUM (ACO) and INTARIAN_PEPPER_ROOT, plus a mechanism for bidding for extra market access. The write-ups disagree on what to bid: [Une Baguette Fromage](https://github.com/Durpie-Git/imc-prosperity-4) bid zero, while [Dark Forest Hunter](https://github.com/Leo-Hawking/IMC-Prosperity-4-Review) raised theirs to 151. We have not confirmed the rules.
@@ -21,16 +23,14 @@ From the audit:
 
 ## Result
 
-- Official: no per-round score is recorded.
-
-  TODO-OSCAR: Q1 — round-2 algorithmic score and rank, and what the team bid for market access.
+- Official: per-round scores were not recorded; only the final result is.
 - No local backtest figure is recorded for this round.
 
 ## Mistakes
 
 The records show none for this round.
 
-TODO-OSCAR: Q4 — what went wrong in round 2, and when did the team notice?
+No first-hand account of this round is recorded: teammates coded it, and Oscar's overall lesson is in the [README](../../README.md#what-i-learned).
 
 ## What top teams did
 

@@ -2,6 +2,8 @@
 
 Sources: audit of the team's code (Codex, 2026), relayed; original files not published. Product facts are as other teams' write-ups state them; see [credits](../credits.md). The manual challenge is in [manual-rounds.md](../manual-rounds.md#round-1-auction).
 
+**Who:** teammates (anonymous) coded this round; Oscar, by his account, verified the team's results.
+
 ## Products
 
 - **ASH_COATED_OSMIUM** (position limit 80): a slowly mean-reverting price near 10,000, with a wide spread.
@@ -22,16 +24,14 @@ From the audit:
 
 ## Result
 
-- Official: no per-round score is recorded.
-
-  TODO-OSCAR: Q1 — round-1 algorithmic score and rank, if the Prosperity portal still shows them.
+- Official: per-round scores were not recorded; only the final result is.
 - **LOCAL BACKTEST, NOT OFFICIAL:** about 63,464 as a 3-day mean (audit).
 
 ## Mistakes
 
 What the records show: the team's own FINDINGS.md warns that the 10k-tick local replay may overstate this result. How far it overstated is not recorded.
 
-TODO-OSCAR: Q4 — what went wrong in round 1, and when did the team notice?
+No first-hand account of this round is recorded: teammates coded it, and Oscar's overall lesson is in the [README](../../README.md#what-i-learned).
 
 ## What top teams did
 

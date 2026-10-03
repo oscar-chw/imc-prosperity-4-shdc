@@ -2,6 +2,8 @@
 
 Sources: audit of the team's code (Codex, 2026), relayed; original files not published. Product facts are as other teams' write-ups state them; see [credits](../credits.md). The manual challenge is in [manual-rounds.md](../manual-rounds.md#round-3-two-bid-game).
 
+**Who:** teammates (anonymous) coded this round; Oscar, by his account, verified the team's results.
+
 ## Products
 
 - **HYDROGEL_PACK:** a price near 9,990, with an average spread of about 16.
@@ -37,16 +39,14 @@ The audit phrases the decision in the first form. The inputs (spread, rebalance 
 
 ## Result
 
-- Official: no per-round score is recorded.
-
-  TODO-OSCAR: Q1 — round-3 algorithmic score and rank, if the Prosperity portal still shows them.
+- Official: per-round scores were not recorded; only the final result is.
 - No local backtest figure is recorded for this round.
 
 ## Mistakes
 
 The records show none for this round. Whether the HYDROGEL drift that hurt another team (below) also hit our quotes is not recorded.
 
-TODO-OSCAR: Q4 — what went wrong in round 3, and was the unhedged voucher book a cost or a saving in hindsight?
+No first-hand account of this round is recorded: teammates coded it, and Oscar's overall lesson is in the [README](../../README.md#what-i-learned).
 
 ## What top teams did
 

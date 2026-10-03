@@ -2,6 +2,8 @@
 
 Sources: audit of the team's code (Codex, 2026), relayed; original files not published. Product facts are as other teams' write-ups state them; see [credits](../credits.md). The manual challenge is in [manual-rounds.md](../manual-rounds.md#round-5-news-portfolio).
 
+**Who:** Oscar coded this round (his account).
+
 ## Products
 
 Fifty new products in ten families of five: GALAXY_SOUNDS, SLEEP_POD, MICROCHIP, PEBBLES, ROBOT, UV_VISOR, TRANSLATOR, PANEL, OXYGEN_SHAKE and SNACKPACK. [DTU Quant Lab](https://github.com/DataAthleteChamp/dtu-quant-lab-imc-prosperity-4) report a position limit of 10 units per product.
@@ -20,9 +22,7 @@ From the audit:
 
 ## Result
 
-- Official: no per-round score is recorded.
-
-  TODO-OSCAR: Q1 — round-5 algorithmic score and rank, if the Prosperity portal still shows them.
+- Official: per-round scores were not recorded; only the final result is.
 - **LOCAL BACKTEST, NOT OFFICIAL**, cross-family gate on the visible days 2–4: 127,494 passive and 165,281 take-only. The audit does not say whether these are totals or per-day values.
 
 ## Mistakes
@@ -32,7 +32,7 @@ What the records show:
 - **The backtest PnL decays across the visible days**, and the team's decision document states a risk that the hidden test days behave differently.
 - **The submitted file is not identified.** The decision document names `submissions/r5_portfolio_cross_gate_v01.py`, which differs from the root `ROUND_5/trader.py`. The records cannot say which one ran.
 
-TODO-OSCAR: Q4 — what went wrong in round 5, and did the live result follow the decaying backtest?
+The README derives the costliest mistake of the competition from these records ([What I learned](../../README.md#what-i-learned)).
 
 ## What top teams did
 

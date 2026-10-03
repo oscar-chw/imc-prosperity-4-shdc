@@ -2,7 +2,7 @@
 
 ## The team
 
-Team SHDC played as a team; this write-up keeps teammates anonymous ("the team"). Individual authorship of the strategies is unknown, and nothing here attributes a strategy to one person.
+Team SHDC had three members. By Oscar's account, his two teammates coded the tutorial and rounds 1 to 3, Oscar coded rounds 4 and 5, and he verified the team's results. Teammates stay anonymous.
 
 ## Tools the team used
 
