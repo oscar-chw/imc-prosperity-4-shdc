@@ -10,7 +10,7 @@ The field's best ideas set against ours, round by round. A team of three: teamma
 - **Round 2:** wall-mid, inventory-neutral market making; a GP-UCB script that proposed the next parameter run.
 - **Round 3:** market making on HYDROGEL, VELVETFRUIT and ten vouchers; buy-at-zero deep strikes; delta hedging costed and rejected.
 - **Round 4 (Oscar):** fixed-anchor market making plus named-counterparty signals; a Kalman drift filter with an uncertainty gate.
-- **Round 5 (Oscar):** Kalman/OU market making on 9 of 50 products; a gated one-lot cross-family residual trade.
+- **Round 5 (Oscar):** Kalman/OU fair values for market making on 9 of 50 products; a gated one-lot cross-family residual (relative-value) trade.
 <!-- built:end -->
 
 ![Our approach against the top teams', by product type: same idea, partly or late, different, or not in our records](assets/strategy-map.png)
