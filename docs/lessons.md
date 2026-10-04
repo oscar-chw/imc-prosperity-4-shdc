@@ -20,7 +20,7 @@ Three kinds of lesson, kept apart:
 
 **Gate a signal on its uncertainty, not only its sign.** In round 4 a drift gate over a 5,000-tick window became a local-linear-trend Kalman filter, whose slope estimate comes with a variance, plus a t-statistic gate, so the drift sign is used only when the estimate is clearly away from zero ([round 4](rounds/round-4.md)). The filter also updates in constant time per tick, but that is secondary: a rolling-window slope can too, with running sums.
 
-**Cost a hedge before adding it, and keep the inputs.** In round 3 the team modelled the cost of delta-hedging the vouchers against the gamma-scalp value it would earn, found the cost higher, and left the book unhedged ([round 3](rounds/round-3.md#the-delta-hedging-decision)). That comparison holds for a long-gamma book; the book's direction, like the cost inputs, is not recorded. The two top-team write-ups that discuss a voucher hedge both favour it.
+**Cost a hedge before adding it, and keep the inputs.** In round 3 the team modelled the cost of delta-hedging the vouchers against the gamma-scalp value it would earn, found the cost higher, and left the book unhedged ([round 3](rounds/round-3.md#the-delta-hedging-decision)). That comparison holds for a long-gamma book; the book's direction, like the cost inputs, is not recorded. The two write-ups that discuss a voucher hedge (19th, 583rd) both favour it.
 
 **Use a Bayesian optimiser as a proposal tool when data is scarce.** In round 2, GP-UCB fitted to 3 backtest results proposed the next pair of `PASSIVE_CAP` and `CLEAR_OFFSET` to try, rather than claiming an optimum ([round 2](rounds/round-2.md)).
 

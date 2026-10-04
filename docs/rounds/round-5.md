@@ -32,7 +32,7 @@ What the records show:
 - **The backtest PnL decays across the visible days**, and the team's decision document states a risk that the hidden test days behave differently.
 - **The submitted file is not identified.** The decision document names `submissions/r5_portfolio_cross_gate_v01.py`, which differs from the root `ROUND_5/trader.py`. The records cannot say which one ran.
 
-The README derives the costliest mistake of the competition from these records ([What I learned](../../README.md#what-i-learned)).
+The README derives the main process mistake from these records ([What I learned](../../README.md#what-i-learned)).
 
 ## What top teams did
 

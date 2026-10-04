@@ -57,7 +57,7 @@ No first-hand account of this round is recorded: teammates coded it, and Oscar's
 - [Une Baguette Fromage](https://github.com/Durpie-Git/imc-prosperity-4) (4th) found implied volatility almost constant per option through each day, so there was no smile to trade; they modelled VFE itself with an Ornstein–Uhlenbeck process.
 - [Team Ryan Challman](https://github.com/nathanw3456/Prosperity_4_Writeup) (57th) report that a voucher fair value anchored on Black–Scholes, tested early in round 3, lost about 64,000 per strike.
 
-The two write-ups that discuss a voucher delta hedge both favour it. Without our cost inputs or the book's direction, whether our rejection was right for us stays open.
+The two write-ups that discuss a voucher delta hedge (19th, 583rd) both favour it. Without our cost inputs or the book's direction, whether our rejection was right for us stays open.
 
 **On volatility.** [DTU Quant Lab](https://github.com/DataAthleteChamp/dtu-quant-lab-imc-prosperity-4) (28th) used one flat volatility of 0.20 in round 3 and added a parabolic correction across strikes in round 4. [JaneRT](https://github.com/heyman7913/imc-prosperity-4) list a flat volatility that missed the smile as their round-3 mistake.
 

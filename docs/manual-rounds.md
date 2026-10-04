@@ -1,6 +1,6 @@
 # Manual rounds
 
-Our manual total is 147,209, 1,132nd of 18,803 (top 6.02%). Source: [leaderboard screenshot](../assets/leaderboard/manual-global-1132.jpg), taken 2026-06-01.
+Our manual total is 147,209, 1,132nd of 18,803 (IMC's team count; top 6.02%). Source: [leaderboard screenshot](../assets/leaderboard/manual-global-1132.jpg), taken 2026-06-01.
 
 That is more points than our algorithmic total (86,750) but a worse rank (algorithmic was 917th). Points are only comparable within a track, so the manual result is the weaker of the two against the field.
 

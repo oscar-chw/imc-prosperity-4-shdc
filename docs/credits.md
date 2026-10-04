@@ -2,7 +2,7 @@
 
 ## The team
 
-Team SHDC had three members. By Oscar's account, his two teammates coded the tutorial and rounds 1 to 3, Oscar coded rounds 4 and 5, and he verified the team's results. Teammates stay anonymous.
+Team SHDC had three members. By Oscar's account, his two teammates coded the tutorial and rounds 1 to 3, Oscar coded rounds 4 and 5, and he checked his teammates' results (what that check involved is not recorded). Teammates stay anonymous.
 
 ## Tools the team used
 

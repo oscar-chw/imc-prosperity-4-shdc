@@ -22,7 +22,7 @@ Each row: one idea from a public write-up, summarised in our own words and linke
 ## How the rounds were scored
 
 - **Two phases.** Rounds 1 and 2 were a qualifier ("phase 1") and rounds 3 to 5 the finals ("phase 2"). Three write-ups state that the leaderboard reset after round 2 and that the final ranking counts the finals only: [Team Infinite 88](https://github.com/Chamoy-code/imc-prosperity-4-challenge) ("determined by Phase 2 performance only (Rounds 3–5)"), [DTU Quant Lab](https://github.com/DataAthleteChamp/dtu-quant-lab-imc-prosperity-4) (cumulative PnL zeroed after the qualifier) and [Une Baguette Fromage](https://github.com/Durpie-Git/imc-prosperity-4) (progress reset after round 2). Our records do not state it, but nothing in them contradicts it.
-- **Two tracks (confirmed by our records).** Algorithmic and manual have separate leaderboards, and the overall score is their sum: our 86,750 + 147,209 = 233,959, with a separate rank on each (leaderboard screenshots, read 2026-06-01; images to be added).
+- **Two tracks (confirmed by our records).** Algorithmic and manual have separate leaderboards, and the overall score is their sum: our 86,750 + 147,209 = 233,959, with a separate rank on each ([leaderboard screenshots](../assets/leaderboard/), taken 2026-06-01).
 - **Visible days and hidden days.** Teams develop on visible sample days; the scored run uses days they have not seen. Our round-5 decision document names this as hidden-test risk (audit), and [Team Infinite 88](https://github.com/Chamoy-code/imc-prosperity-4-challenge)'s backtest-versus-live gap shows how large it can be.
 
 So our final 233,959 very likely covers rounds 3 to 5, which include Oscar's rounds 4 and 5; per-round scores were not recorded ([README](../README.md#results)).

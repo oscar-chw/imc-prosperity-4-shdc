@@ -1,7 +1,7 @@
 # Assets
 
 - `strategy-map.png`: our approach against the top teams', per product type. Drawn by `scripts/make_figure.py` from the repository's own documents; it contains no score.
-- `leaderboard/`: the seven final-leaderboard screenshots, taken 2026-06-01. The public leaderboard has since been taken down. They are cropped to the leaderboard panel (no browser chrome), and their embedded metadata was removed. Every score and rank in this repository comes from them.
+- `leaderboard/`: the seven final-leaderboard screenshots, taken 2026-06-01. They are cropped to the leaderboard panel (no browser chrome), and their embedded metadata was removed. Every SHDC score and rank in this repository comes from them; the 18,803 team count comes from IMC's official site, and top-team figures and local backtests come from the sources named where they are used.
 
 | File | Shows |
 |---|---|
