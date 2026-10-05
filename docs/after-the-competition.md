@@ -60,4 +60,4 @@ The lab also imports a saved log in a pinned community backtester format ([nabay
 ## What this does and does not show
 
 - It shows, on hand-made paths, that inventory skew trades directional gain for lower exposure, and that stale quotes can flip a position against the trend while every limit holds.
-- It does not show that the team's skew settings were wrong, or how much any round lost to either mechanism. That needs the team's logs: if one is recovered ([README](../README.md#not-yet-included)), the lab's importer can replace these SYNTHETIC cases with real fills.
+- It does not show that the team's skew settings were wrong, or how much any round lost to either mechanism. That needs the team's logs: if one is recovered ([README](../README.md#limits)), the lab's importer can replace these SYNTHETIC cases with real fills.
