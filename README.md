@@ -20,11 +20,11 @@ The field's best ideas set against ours, round by round. A team of three: teamma
 Per-round table with lessons: [Approach](#approach). The demo verifies the write-up's internal links and structure and prints the summary (Python 3, no installs):
 
 ```bash
-git clone <this repo> && cd imc-prosperity-4-shdc
+git clone https://github.com/hihihhi/imc-prosperity-4-shdc && cd imc-prosperity-4-shdc
 bash scripts/demo.sh
 ```
 
-Scores come from leaderboard screenshots ([assets/leaderboard/](assets/leaderboard/)) and strategies from a relayed AI audit of the team's unpublished code ([Limits](#limits)); the write-up, its scripts and tests were implemented with AI coding agents under Oscar's design and review.
+Scores come from leaderboard screenshots ([assets/leaderboard/](assets/leaderboard/)); strategy sources are in [Limits](#limits). Implemented with AI coding agents under Oscar's design and review.
 
 ## The problem
 
@@ -112,9 +112,7 @@ Detail in [design-decisions.md](docs/design-decisions.md):
 - **Local backtests are not official** and, by the team's own notes, may overstate.
 - **Top-team figures** were re-checked against each write-up's README on 2026-10-03 through a fetch tool that quotes the page; figures it could not find were removed. The Prosperity 3 notes in [imc3-reference.md](docs/imc3-reference.md) were not re-checked.
 
-### Pending Oscar's input
-
-Non-blocking:
+### Not yet included
 
 - Code: the team's trader files are not published; excerpts may be added later if they are recovered from the team PC.
 - Screenshots: published with the team name visible, cropped to the leaderboard panel, metadata stripped ([assets/README.md](assets/README.md)).
