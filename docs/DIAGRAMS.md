@@ -14,63 +14,63 @@ at the documents that record it. The README embeds diagrams 1 and 2; diagrams 3 
 
 ## 1. Strategy map per round
 
-What each round's trader did, from fair value to the controls on its orders, and who coded it (labels from the [round documents](rounds/tutorial.md)):
+What each round's trader did, from fair value to the controls on its orders, one row per round, and who coded it by Oscar's account (labels from the [round documents](rounds/tutorial.md)):
 
 ```mermaid
-flowchart LR
-  subgraph TEAM["Teammates coded, by Oscar's account"]
-    subgraph RT["Tutorial: EMERALDS, TOMATOES"]
-      T0F["EMERALDS fixed 10,000;<br/>TOMATOES moving centre"]
-      T0Q["market making"]
-      T0R{{"EMERALDS quotes<br/>skewed by inventory"}}
-    end
-    subgraph RA["Round 1: OSMIUM, PEPPER_ROOT"]
-      R1F["OSMIUM fixed value;<br/>PEPPER_ROOT online slope"]
-      R1Q["OSMIUM takes, passive quotes;<br/>PEPPER_ROOT drift-aware buys"]
-      R1R{{"inventory controls;<br/>capped sells"}}
-    end
-    subgraph RB["Round 2: same two, access bid"]
-      R2F["ACO wall mid"]
-      R2Q["ACO market making"]
-      R2R{{"aims inventory-neutral"}}
-    end
-    subgraph RC["Round 3: HYDROGEL, VFE, 10 vouchers"]
-      R3F["VFE filtered fair value"]
-      R3Q["HYDROGEL MM + take overlay;<br/>vouchers MM; deep strikes<br/>bought at zero"]
-      R3R{{"VFE inventory skew;<br/>delta hedge rejected"}}
-    end
+flowchart TB
+  subgraph RT["Tutorial, teammates: EMERALDS, TOMATOES"]
+    direction LR
+    T0F["EMERALDS fixed<br/>10,000; TOMATOES<br/>moving centre"]
+    T0Q["market making"]
+    T0R{{"EMERALDS quotes<br/>skewed by<br/>inventory"}}
+    T0F -->|"fair value"| T0Q
+    T0Q -->|"bid, ask"| T0R
   end
-  subgraph OSC["Oscar coded, by his account"]
-    subgraph RD["Round 4: same, named counterparties"]
-      R4F["HYDROGEL fixed anchor;<br/>VFE Kalman drift slope"]
-      R4Q["HYDROGEL MM + Mark signals;<br/>VFE counterparty target"]
-      R4R{{"kept only if Kalman drift<br/>sign agrees, t-stat gate;<br/>stop-out, end-of-day"}}
-    end
-    subgraph RE["Round 5: 50 products, 10 families"]
-      R5F["Kalman or OU fair value;<br/>residual vs its family"]
-      R5Q["MM on 9 of 50;<br/>cross-family residual trade"]
-      R5R{{"warm-up, score, z-gap,<br/>spread gates; one lot"}}
-    end
+  subgraph RA["Round 1, teammates: OSMIUM, PEPPER_ROOT"]
+    direction LR
+    R1F["OSMIUM fixed<br/>value; PEPPER_ROOT<br/>online slope"]
+    R1Q["OSMIUM takes,<br/>passive quotes;<br/>PEPPER_ROOT<br/>drift-aware buys"]
+    R1R{{"inventory<br/>controls;<br/>capped sells"}}
+    R1F -->|"value, slope"| R1Q
+    R1Q -->|"takes, quotes"| R1R
   end
-  TR["Python Trader: orders<br/>under position limits,<br/>vs market bots"]
-  T0F -->|"fair value"| T0Q
-  T0Q -->|"bid and ask quotes"| T0R
-  R1F -->|"fair value, slope"| R1Q
-  R1Q -->|"takes and quotes"| R1R
-  R2F -->|"fair value from book"| R2Q
-  R2Q -->|"quotes"| R2R
-  R3F -->|"fair value"| R3Q
-  R3Q -->|"quotes and takes"| R3R
-  R4F ==>|"anchor; slope + variance"| R4Q
-  R4Q ==>|"signal-driven targets"| R4R
-  R5F ==>|"fair values, residuals"| R5Q
-  R5Q ==>|"quotes; candidate trades"| R5R
-  T0R -->|"orders"| TR
-  R1R -->|"orders"| TR
-  R2R -->|"orders"| TR
-  R3R -->|"orders"| TR
-  R4R ==>|"orders"| TR
-  R5R ==>|"orders"| TR
+  subgraph RB["Round 2, teammates: same two, access bid"]
+    direction LR
+    R2F["ACO wall mid"]
+    R2Q["ACO market<br/>making"]
+    R2R{{"aims inventory-<br/>neutral"}}
+    R2F -->|"value<br/>from book"| R2Q
+    R2Q -->|"quotes"| R2R
+  end
+  subgraph RC["Round 3, teammates: HYDROGEL, VFE, 10 vouchers"]
+    direction LR
+    R3F["VFE filtered<br/>fair value"]
+    R3Q["HYDROGEL MM<br/>+ take overlay;<br/>vouchers MM;<br/>deep strikes<br/>bought at zero"]
+    R3R{{"VFE inventory<br/>skew; delta<br/>hedge rejected"}}
+    R3F -->|"fair value"| R3Q
+    R3Q -->|"quotes, takes"| R3R
+  end
+  subgraph RD["Round 4, Oscar: same, named counterparties"]
+    direction LR
+    R4F["HYDROGEL fixed<br/>anchor; VFE Kalman<br/>drift slope"]
+    R4Q["HYDROGEL MM<br/>+ Mark signals;<br/>VFE counterparty<br/>target"]
+    R4R{{"kept only if<br/>Kalman drift<br/>sign agrees,<br/>t-stat gate;<br/>stop-out, end-of-day"}}
+    R4F ==>|"anchor; slope<br/>+ variance"| R4Q
+    R4Q ==>|"signal<br/>targets"| R4R
+  end
+  subgraph RE["Round 5, Oscar: 50 products, 10 families"]
+    direction LR
+    R5F["Kalman or OU<br/>fair value; residual<br/>vs its family"]
+    R5Q["MM on 9 of 50;<br/>cross-family<br/>residual trade"]
+    R5R{{"warm-up, score,<br/>z-gap, spread<br/>gates; one lot"}}
+    R5F ==>|"values,<br/>residuals"| R5Q
+    R5Q ==>|"quotes;<br/>candidates"| R5R
+  end
+  RT -->|"next round"| RA
+  RA -->|"next round"| RB
+  RB -->|"next round"| RC
+  RC -->|"next round"| RD
+  RD ==>|"next round"| RE
   classDef data fill:#dbeafe,stroke:#1d4ed8,color:#0b1220
   classDef step fill:#f1f5f9,stroke:#475569,color:#0b1220
   classDef gate fill:#fef3c7,stroke:#b45309,color:#0b1220
@@ -80,7 +80,6 @@ flowchart LR
   class T0F,T0Q,R1F,R1Q,R2F,R2Q,R3F,R3Q step
   class R4F,R4Q,R5F,R5Q key
   class T0R,R1R,R2R,R3R,R4R,R5R gate
-  class TR out
 ```
 
 Where in the code: the team's trader files are not published; every node is a strategy line in `docs/rounds/tutorial.md` to `docs/rounds/round-5.md`, and who coded which round is from [Who did what](../README.md#who-did-what). All diagrams: [docs/DIAGRAMS.md](DIAGRAMS.md).
