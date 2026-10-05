@@ -1,6 +1,6 @@
 # IMC Prosperity 4: Team SHDC, a lessons-learned write-up
 
-[![ci](https://github.com/hihihhi/imc-prosperity-4-shdc/actions/workflows/ci.yml/badge.svg)](https://github.com/hihihhi/imc-prosperity-4-shdc/actions/workflows/ci.yml) [![lint](https://github.com/hihihhi/imc-prosperity-4-shdc/actions/workflows/lint.yml/badge.svg)](https://github.com/hihihhi/imc-prosperity-4-shdc/actions/workflows/lint.yml)
+[![ci](https://github.com/oscar-chw/imc-prosperity-4-shdc/actions/workflows/ci.yml/badge.svg)](https://github.com/oscar-chw/imc-prosperity-4-shdc/actions/workflows/ci.yml) [![lint](https://github.com/oscar-chw/imc-prosperity-4-shdc/actions/workflows/lint.yml/badge.svg)](https://github.com/oscar-chw/imc-prosperity-4-shdc/actions/workflows/lint.yml)
 
 **904th of 18,803 teams (IMC's team count; top 4.81%), 18th in Hong Kong; algorithmic 917th, manual 1,132nd** ([Results](#results)).
 
@@ -20,7 +20,7 @@ The field's best ideas set against ours, round by round. A team of three: teamma
 Per-round table with lessons: [Approach](#approach). The demo verifies the write-up's internal links and structure and prints the summary (Python 3, no installs):
 
 ```bash
-git clone https://github.com/hihihhi/imc-prosperity-4-shdc && cd imc-prosperity-4-shdc
+git clone https://github.com/oscar-chw/imc-prosperity-4-shdc && cd imc-prosperity-4-shdc
 bash scripts/demo.sh
 ```
 
