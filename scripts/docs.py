@@ -11,40 +11,66 @@ prints is missing, so a renamed marker cannot turn the demo into a silent no-op.
 import pathlib
 import re
 import sys
+import urllib.parse
 
 ROUND_HEADINGS = ["Products", "Our hypothesis", "Strategy", "Result",
                   "Mistakes", "What top teams did"]
 ROUND_DOCS = ["tutorial.md"] + [f"round-{n}.md" for n in range(1, 6)]
-LINK = re.compile(r"\[[^\]]*\]\(([^)\s]+)\)")
+# Matches the `](target)` part, so the outer link of `[![alt](img)](target)` is found as well as
+# the inner image; `<target with spaces>` and a trailing "title" are accepted.
+LINK = re.compile(r"\]\(\s*(?:<([^>\n]*)>|([^)\s]+))[^)]*\)")
 FENCE = re.compile(r"^```.*?^```", re.S | re.M)
+CODE_SPAN = re.compile(r"(`+)[^\n]*?\1")
+HEADING = re.compile(r"^#{1,6}[ \t]+(.+?)[ \t]*$", re.M)
+HTML_ID = re.compile(r"""<a\s[^>]*?\b(?:id|name)=["']([^"']+)["']""")
 BLOCKS = ("results", "built")
 
 
+def read(path):
+    """File text with CRLF folded to LF, so a Windows checkout parses like a Unix one."""
+    return path.read_text(encoding="utf-8").replace("\r\n", "\n")
+
+
 def slug(heading):
-    s = heading.strip().lower()
+    s = re.sub(r"[ \t]+#+$", "", heading.strip())       # closing ATX hashes
+    s = re.sub(r"\[([^\]]*)\]\([^)]*\)", r"\1", s)     # link text only, not its URL
+    s = re.sub(r"<[^>]*>", "", s).lower()
     s = re.sub(r"[^\w\- ]", "", s)
     return s.replace(" ", "-")
 
 
 def anchors(path):
-    text = FENCE.sub("", path.read_text(encoding="utf-8"))
-    return {slug(h) for h in re.findall(r"^#{1,6}\s+(.+)$", text, re.M)}
+    text = FENCE.sub("", read(path))
+    found, seen = set(HTML_ID.findall(text)), {}
+    for h in HEADING.findall(text):
+        base = slug(h)
+        n = seen.get(base, 0)
+        seen[base] = n + 1
+        found.add(base if n == 0 else f"{base}-{n}")  # GitHub numbers repeated headings
+    return found
 
 
 def check(root):
     """Return a list of problems; empty means the repository is consistent."""
-    root = pathlib.Path(root)
+    root = pathlib.Path(root).resolve()
     errors = []
     docs = sorted(p for p in root.rglob("*.md") if ".git" not in p.parts)
     for doc in docs:
-        text = FENCE.sub("", doc.read_text(encoding="utf-8"))
-        for target in LINK.findall(text):
+        text = CODE_SPAN.sub("", FENCE.sub("", read(doc)))
+        for angle, bare in LINK.findall(text):
+            target = angle or bare
             if re.match(r"[a-z]+:", target):
                 continue
             rel, _, frag = target.partition("#")
-            dest = (doc.parent / rel).resolve() if rel else doc.resolve()
+            rel = urllib.parse.unquote(rel.partition("?")[0])
+            frag = urllib.parse.unquote(frag)
+            # A leading "/" is the repository root on GitHub, not the filesystem root.
+            base = root if rel.startswith("/") else doc.parent
+            dest = (base / rel.lstrip("/")).resolve() if rel else doc.resolve()
             name = doc.relative_to(root)
-            if not dest.exists():
+            if dest != root and root not in dest.parents:
+                errors.append(f"{name}: link escapes the repository -> {target}")
+            elif not dest.exists():
                 errors.append(f"{name}: broken link -> {target}")
             elif frag and dest.suffix == ".md" and frag not in anchors(dest):
                 errors.append(f"{name}: missing anchor -> {target}")
@@ -53,7 +79,7 @@ def check(root):
         if not doc.is_file():
             errors.append(f"docs/rounds/{name}: missing round document")
             continue
-        found = re.findall(r"^##\s+(.+?)\s*$", doc.read_text(encoding="utf-8"), re.M)
+        found = re.findall(r"^##[ \t]+(.+?)[ \t]*$", FENCE.sub("", read(doc)), re.M)
         if found != ROUND_HEADINGS:
             errors.append(f"docs/rounds/{name}: headings {found}, expected {ROUND_HEADINGS}")
     return errors, len(docs)
@@ -61,7 +87,7 @@ def check(root):
 
 def block(text, name):
     """The README text between <!-- name:start --> and <!-- name:end -->, or None."""
-    m = re.search(rf"<!-- {name}:start -->\n(.*?)<!-- {name}:end -->", text, re.S)
+    m = re.search(rf"<!-- {name}:start -->\r?\n(.*?)<!-- {name}:end -->", text, re.S)
     return m.group(1).strip() if m else None
 
 
@@ -72,7 +98,7 @@ def plain(md):
 
 
 def summary(root):
-    text = (pathlib.Path(root) / "README.md").read_text(encoding="utf-8")
+    text = read(pathlib.Path(root) / "README.md")
     parts = {name: block(text, name) for name in BLOCKS}
     missing = [n for n, body in parts.items() if not body]
     if missing:
